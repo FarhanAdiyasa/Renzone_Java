@@ -39,7 +39,7 @@ Key features of the Renzone application include:
 - **Member and Employee Management:** Record member and employee information, and manage access rights related to rental operations.
 - **Transaction Management:** Track rental transactions, payments, and cancellations.
 - **Operational Reporting:** Record and analyze operational data for financial reporting and performance analysis.
-- **Default Login Credentials: [see this](DEFAULT-LOGIN-RENZONE.txt)
+- **Default Login Credentials:** [see this](DEFAULT-LOGIN-RENZONE.txt)
 
 For more detailed usage guidance, please refer to the [User Guide](UserGuide.pdf) included.
 
