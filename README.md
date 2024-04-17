@@ -38,7 +38,7 @@ Upon launching Renzone, you will be presented with the main dashboard containing
 - **Managing Assets:** Track PlayStation consoles, controllers, and accessories, manage stock levels.
 - **Generating Reports:** Generate financial reports, analyze revenue, expenses, and profitability.
 
-Refer to the [User Manual](docs/UserManual.pdf) for detailed instructions on using Renzone.
+Refer to the [User Manual](UserGuide.pdf) for detailed instructions on using Renzone.
 
 ## Technologies Used
 
