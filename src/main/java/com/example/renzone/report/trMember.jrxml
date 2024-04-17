@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="trsMember" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="37e3d8eb-1199-4d21-afd8-358bc4a521e0">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="id_transaksi" class="java.lang.String"/>
+	<parameter name="id_karyawan" class="java.lang.String"/>
+	<parameter name="Cash" class="java.lang.String"/>
+	<parameter name="Change" class="java.lang.String"/>
+	<parameter name="tanggal_selesai" class="java.lang.String"/>
+	<parameter name="id_member" class="java.lang.String"/>
+	<parameter name="tanggal_mulai" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="46" width="100" height="30" uuid="d4949168-0586-4c4c-a056-ad42a06a59fd"/>
+				<textFieldExpression><![CDATA[$P{id_transaksi}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="221" y="-14" width="113" height="100" uuid="618b76c3-88cc-4efd-a301-6b43c3ca0ee9"/>
+				<imageExpression><![CDATA["D:/coba/JAVA/Renzone/src/main/resources/com/example/renzone/img/icon/logo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="450" y="45" width="100" height="30" uuid="77ea4466-5588-4244-a076-0d99b7b0224f"/>
+				<textFieldExpression><![CDATA[$P{id_karyawan}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="75" width="556" height="1" uuid="c298df56-02d7-4ee3-83f2-49620017660e">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="211" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="87" width="225" height="30" uuid="3189c4b3-7a8c-4cb6-8fcc-3da0edb4a8d4"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Member Subscription]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="97" width="100" height="30" uuid="6b45de49-4489-444e-b3b0-8d4f4153880f"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Rp.10.000]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="127" width="100" height="30" uuid="27f8deed-da17-44d7-81fb-36cd123bc21d"/>
+				<textFieldExpression><![CDATA[$P{id_member}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="165" y="50" width="227" height="1" uuid="d2c8154e-8d0b-454f-8e4a-c9d0d8bf3b59">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="3.0" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="165" y="15" width="227" height="30" uuid="bccdecf8-00b6-44f4-a8e9-5d7aed9f32e7"/>
+				<textElement textAlignment="Center">
+					<font fontName="SimSun" size="25"/>
+				</textElement>
+				<text><![CDATA[CASH RECEIPT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="210" width="556" height="1" uuid="cc859362-1d85-4673-92dd-af0704c90d3f">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="3.0" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="1" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="190" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="14" width="130" height="30" uuid="3b49deeb-6f6c-4eda-b215-f3d4185920d1"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="14" width="100" height="30" uuid="3e87b1eb-d043-4a60-ad59-840765196769"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Rp.10.000]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="50" width="100" height="30" uuid="c7631662-82bb-490a-b34d-d09711d17fda"/>
+				<textFieldExpression><![CDATA[$P{Cash}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="50" width="130" height="30" uuid="fb2989ad-40e0-4ddf-8b94-e7661d1a1b40"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Cash]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="84" width="130" height="30" uuid="f5995b63-2149-44e6-a946-d2dfc1ca49e0"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Change]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="111" width="556" height="1" uuid="500bc67e-128e-4beb-a37b-81975efd67ac">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="258" y="116" width="50" height="30" uuid="7d98009b-3418-4f51-8bdb-03f7a253fcef"/>
+				<textElement textAlignment="Center">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Until]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="83" width="100" height="30" uuid="cf7325fb-64a3-49dd-8d6e-9f5beec027bb"/>
+				<textFieldExpression><![CDATA[$P{Change}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="160" width="207" height="30" uuid="d7f5b13a-03bc-4106-83c7-a4ec57dadcca"/>
+				<textElement textAlignment="Center">
+					<font fontName="Castellar" size="22"/>
+				</textElement>
+				<text><![CDATA[Thank You]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="117" width="145" height="30" uuid="7918c45c-3315-45c7-9ac3-d24e55b05169"/>
+				<textFieldExpression><![CDATA[$P{tanggal_selesai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="116" width="100" height="30" uuid="c2e7f165-dcd3-4ad2-99b8-10f3f82d6eed"/>
+				<textFieldExpression><![CDATA[$P{tanggal_mulai}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

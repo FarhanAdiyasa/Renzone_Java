@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="724da490-0ec7-4d6d-b509-0317fc90f3ed">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Renzone_Adapter"/>
+	<parameter name="noLap" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT  *
+  FROM [Renzone].[dbo].[total_all]
+  WHERE DATEPART(MONTH, [tanggal_transaksi]) = DATEPART(MONTH, GETDATE())
+  AND DATEPART(YEAR, [tanggal_transaksi]) = DATEPART(YEAR, GETDATE());]]>
+	</queryString>
+	<field name="id_transaksi" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_transaksi"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_transaksi"/>
+	</field>
+	<field name="tanggal_transaksi" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="tanggal_transaksi"/>
+		<property name="com.jaspersoft.studio.field.label" value="tanggal_transaksi"/>
+	</field>
+	<field name="total_transaksi" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="total_transaksi"/>
+		<property name="com.jaspersoft.studio.field.label" value="total_transaksi"/>
+	</field>
+	<field name="tipe_transaksi" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tipe_transaksi"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipe_transaksi"/>
+	</field>
+	<variable name="totalColumnCount" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$V{COLUMN_NUMBER}]]></variableExpression>
+	</variable>
+	<group name="id_transaksi">
+		<groupExpression><![CDATA[$F{id_transaksi}]]></groupExpression>
+	</group>
+	<group name="tanggal_transaksi">
+		<groupExpression><![CDATA[$F{tanggal_transaksi}]]></groupExpression>
+	</group>
+	<group name="total_transaksi">
+		<groupExpression><![CDATA[$F{total_transaksi}]]></groupExpression>
+	</group>
+	<group name="tipe_transaksi">
+		<groupExpression><![CDATA[$F{tipe_transaksi}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="2" width="240" height="30" forecolor="#0000F5" uuid="9f35a606-0b11-41bb-aa9a-8639c4a5d49b"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+				</box>
+				<textElement>
+					<font fontName="SimSun" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INCOME REPORT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="31" width="126" height="14" forecolor="#0000F5" uuid="f1d234ab-e5b0-4834-98e7-a50753c191e5"/>
+				<box>
+					<pen lineColor="#C92320"/>
+				</box>
+				<text><![CDATA[RENZONE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="7" y="47" width="543" height="1" uuid="fe6e5be4-fbf5-4f49-b843-b9fde3d62239"/>
+			</line>
+			<image>
+				<reportElement x="470" y="-23" width="80" height="70" uuid="64d66da6-c62f-4e30-9ffd-56ab772aeee9"/>
+				<imageExpression><![CDATA["D:/coba/JAVA/Renzone/src/main/resources/com/example/renzone/img/icon/logo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="14" y="54" width="161" height="30" uuid="1fd37d5b-42fc-404e-b104-6fb43e421541"/>
+				<textFieldExpression><![CDATA["No Laporan : INC/GH/"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="54" width="100" height="30" uuid="b1c38d62-dc97-4d91-a2be-fe9a84282a55"/>
+				<textFieldExpression><![CDATA[$P{noLap}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="48" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="70" y="0" width="110" height="48" forecolor="#8C2A29" backcolor="#0000F5" uuid="a87ed7aa-e191-4d42-9c7f-4c85bbda5820"/>
+				<staticText>
+					<reportElement x="0" y="0" width="108" height="47" forecolor="#FFFFFF" uuid="310f5e49-aa0a-40d2-b79b-2f5e00abc6ba"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Transaction's Id]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="180" y="0" width="120" height="48" forecolor="#8C2A29" backcolor="#0000F5" uuid="bb23d4ab-b130-4040-bd2e-c1b611701931"/>
+				<staticText>
+					<reportElement x="-1" y="0" width="119" height="47" forecolor="#FFFFFF" uuid="7da68e6a-b477-4593-8ad7-a793988403ab"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Transaction's Date]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="300" y="0" width="120" height="48" forecolor="#8C2A29" backcolor="#0000F5" uuid="5158efe7-9b1d-431a-8f79-3dc836dcef49"/>
+				<staticText>
+					<reportElement x="2" y="1" width="118" height="47" forecolor="#FFFFFF" uuid="a0920671-c78b-4057-8aab-e2bfbbd4e717"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total Transaction]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="420" y="0" width="120" height="48" forecolor="#8C2A29" backcolor="#0000F5" uuid="e7ab5e3c-7dca-4997-86ff-97743a9888ed"/>
+				<staticText>
+					<reportElement x="0" y="0" width="119" height="47" forecolor="#FFFFFF" uuid="193d97b8-2cbf-466d-ac3e-3ae8ddeca5e9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Transaction's Type]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="18" y="0" width="54" height="48" backcolor="#0000F5" uuid="34031351-b98d-4558-ba7a-08b9cec51c92"/>
+				<staticText>
+					<reportElement x="2" y="-1" width="50" height="49" forecolor="#FFFFFF" uuid="644ddbd5-04f4-422b-ad8b-472dae54d9f1"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled"/>
+					<text><![CDATA[No]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="19" y="0" width="53" height="40" uuid="7ed4ae5a-a0ef-4dfb-a7d4-0c3302ce4816"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{totalColumnCount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="0" width="108" height="40" uuid="8bb3f196-2688-4dba-a058-fc53a860a93d"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{id_transaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="179" y="0" width="120" height="40" uuid="b2b8201a-bdd1-4cb0-a4f3-381f0a5adf8d"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tanggal_transaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="120" height="40" uuid="f2d6ea2d-e370-4bca-9862-6bdf6871a765"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["Rp. " + $F{total_transaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="0" width="119" height="40" uuid="cfa5c434-5a91-4063-aa6b-09e4d5fc9867"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tipe_transaksi}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="44" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="280" y="14" width="100" height="30" uuid="2a8ff0c0-b4d3-4b7c-b432-93cf804cfcd8"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="13" width="100" height="30" uuid="93940ea7-4919-441a-b962-737cb634f1f1"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="407" y="2" width="100" height="30" uuid="7c85b28d-9842-47cd-b465-ea7118c00285"/>
+				<text><![CDATA[Cikarang, ]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="457" y="2" width="100" height="30" uuid="48240161-3822-4fc7-965a-ec72354a73d7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

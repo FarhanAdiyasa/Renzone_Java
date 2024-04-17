@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AssetReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="158d3250-da0f-4094-9f71-4ccd7806676c">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Renzone_Adapter"/>
+	<parameter name="noLap" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+    id_ps AS id_asset,
+	no_seri AS nama_aset,
+    jenis_ps AS jenis_aset,
+    kondisi_ps AS kondisi
+FROM
+    ms_ps
+
+UNION
+
+SELECT
+    id_aksesoris AS id_asset,
+	nama_aksesoris AS nama_aset,
+    jenis_aksesoris AS jenis_aset,
+    kondisi_aksesoris AS kondisi
+FROM
+    ms_aksesoris;]]>
+	</queryString>
+	<field name="id_asset" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_asset"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_asset"/>
+	</field>
+	<field name="nama_aset" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nama_aset"/>
+		<property name="com.jaspersoft.studio.field.label" value="nama_aset"/>
+	</field>
+	<field name="jenis_aset" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="jenis_aset"/>
+		<property name="com.jaspersoft.studio.field.label" value="jenis_aset"/>
+	</field>
+	<field name="kondisi" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="kondisi"/>
+		<property name="com.jaspersoft.studio.field.label" value="kondisi"/>
+	</field>
+	<variable name="totalColumnCount" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$V{COLUMN_NUMBER}]]></variableExpression>
+	</variable>
+	<group name="id_asset">
+		<groupExpression><![CDATA[$F{id_asset}]]></groupExpression>
+	</group>
+	<group name="nama_aset">
+		<groupExpression><![CDATA[$F{nama_aset}]]></groupExpression>
+	</group>
+	<group name="jenis_aset">
+		<groupExpression><![CDATA[$F{jenis_aset}]]></groupExpression>
+	</group>
+	<group name="kondisi">
+		<groupExpression><![CDATA[$F{kondisi}]]></groupExpression>
+	</group>
+	<background>
+		<band height="15" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<image>
+				<reportElement x="470" y="-23" width="80" height="70" uuid="c6595590-33e3-4440-becc-ce34f53e5213"/>
+				<imageExpression><![CDATA["D:/coba/JAVA/Renzone/src/main/resources/com/example/renzone/img/icon/logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="7" y="2" width="240" height="30" forecolor="#0000F5" uuid="75bf2a12-362d-4bc5-b553-1fe2888d75bf"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+				</box>
+				<textElement>
+					<font fontName="SimSun" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ASSETS REPORT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="31" width="126" height="14" forecolor="#0000F5" uuid="b88aceb5-2bec-43a7-b795-8a4d80314a9a"/>
+				<box>
+					<pen lineColor="#C92320"/>
+				</box>
+				<text><![CDATA[RENZONE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="7" y="47" width="543" height="1" uuid="65a4de83-3b20-41c8-93d4-6190f45fb911"/>
+			</line>
+			<textField>
+				<reportElement x="14" y="54" width="161" height="30" uuid="a473309e-805d-498d-8333-4ca70a49b273"/>
+				<textFieldExpression><![CDATA["No Laporan : AST/GH/"]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="420" y="50" width="150" height="30" uuid="056e6a9e-e32b-477a-a0ea-281acd9b6536"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="485" y="50" width="85" height="30" uuid="51292690-fdef-4c28-a3c4-8f12e4321f92"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="54" width="100" height="30" uuid="3aaf6e8f-d0ee-4b96-9bd6-fd9dea204b1d"/>
+				<textFieldExpression><![CDATA[$P{noLap}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="2" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="49" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="70" y="0" width="110" height="48" forecolor="#8C2A29" backcolor="#0000F5" uuid="8b3e2b18-31fc-49be-9b59-ad6a3991bb04"/>
+				<staticText>
+					<reportElement x="0" y="0" width="108" height="47" forecolor="#FFFFFF" uuid="61807eb6-1ac9-4bab-b23f-c64541046497"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Assets's Id]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="180" y="0" width="120" height="48" forecolor="#8C2A29" backcolor="#0000F5" uuid="5c203c5b-ac23-4ffd-9fcf-f0412a30f708"/>
+				<staticText>
+					<reportElement x="-1" y="0" width="119" height="47" forecolor="#FFFFFF" uuid="7fcc1435-9428-41c1-a920-ec610e1f2000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Assets's Name]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="300" y="0" width="120" height="48" forecolor="#8C2A29" backcolor="#0000F5" uuid="3e36bd28-7a66-46a7-bb55-cd9b6f7fe5d8"/>
+				<staticText>
+					<reportElement x="2" y="1" width="118" height="47" forecolor="#FFFFFF" uuid="15fcae6b-3ad8-4592-b287-d9aefbc66b1b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Assets's Type]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="420" y="0" width="120" height="48" forecolor="#8C2A29" backcolor="#0000F5" uuid="57034927-31c2-418d-afde-fca75893b4b7"/>
+				<staticText>
+					<reportElement x="0" y="0" width="119" height="47" forecolor="#FFFFFF" uuid="a8eff4e6-04c2-4fa3-9a1c-245334048414"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Condition]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="18" y="0" width="54" height="48" backcolor="#0000F5" uuid="c857d857-b7a9-4c84-8af1-7b86309a3da7"/>
+				<staticText>
+					<reportElement x="2" y="-1" width="50" height="49" forecolor="#FFFFFF" uuid="79e02df6-2be6-490c-bf60-839cf141bc04"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled"/>
+					<text><![CDATA[No]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="72" y="0" width="108" height="40" uuid="24481c8a-c77d-4b0d-a354-93f6aa12d048"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{id_asset}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="179" y="0" width="120" height="40" uuid="41a153be-b325-4641-a9a4-7c46ca944092"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nama_aset}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="120" height="40" uuid="17cc6332-5b5c-4839-aaa9-75523afd124e"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{jenis_aset}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="0" width="119" height="40" uuid="be42432b-9726-4b55-941b-deba255cc940"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{kondisi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="19" y="0" width="53" height="40" uuid="4131e44a-5398-4a5c-952a-881615aa0f58"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{totalColumnCount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="180" y="23" width="100" height="30" uuid="1c815a51-9888-4c82-a322-7e55bb0c6465"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="280" y="24" width="100" height="30" uuid="90c2e6d9-46c4-4c1b-aef7-7a59113aa408"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="45" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="457" y="11" width="100" height="30" uuid="3eb292a1-2d97-415c-9663-5c58638a72d0"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="407" y="11" width="100" height="30" uuid="6ec791a5-a906-4a0c-96b7-c8c636b2bc5a"/>
+				<text><![CDATA[Cikarang, ]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

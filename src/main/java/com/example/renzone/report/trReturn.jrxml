@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="trsReturn" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="78dfb854-149e-451a-b7b3-e39a3128b030">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Renzone_Adapter"/>
+	<parameter name="id_transaksi" class="java.lang.String"/>
+	<parameter name="id_karyawan" class="java.lang.String"/>
+	<parameter name="Total" class="java.lang.String"/>
+	<parameter name="Cash" class="java.lang.String"/>
+	<parameter name="Change" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT a.nama_Asset as asset_name, b.kondisi_pengembalian as asset_condition FROM asset a
+INNER JOIN dtl_peminjamanps b ON b.id_ps = a.id_asset
+WHERE b.id_peminjaman = $P{id_transaksi}
+UNION
+SELECT a.nama_Asset as asset_name, b.kondisi_pengembalian as kondisi_asset FROM asset a
+INNER JOIN dtl_pinjamaksesoris b ON b.id_aksesoris = a.id_asset
+WHERE b.id_peminjaman = $P{id_transaksi}]]>
+	</queryString>
+	<field name="asset_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="asset_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="asset_name"/>
+	</field>
+	<field name="asset_condition" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="asset_condition"/>
+		<property name="com.jaspersoft.studio.field.label" value="asset_condition"/>
+	</field>
+	<title>
+		<band height="87" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="50" width="100" height="30" uuid="88a56d96-25fa-4ba7-8697-b99374f96abe"/>
+				<textFieldExpression><![CDATA[$P{id_transaksi}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="221" y="-14" width="113" height="100" uuid="46e7ec28-d2c2-4359-b753-7ae3ebca2dd5"/>
+				<imageExpression><![CDATA["D:/coba/JAVA/Renzone/src/main/resources/com/example/renzone/img/icon/logo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="456" y="48" width="100" height="30" uuid="6451b6ae-aea8-47bb-b0c3-bd6e1ba65bf4"/>
+				<textFieldExpression><![CDATA[$P{id_karyawan}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-1" y="80" width="556" height="1" forecolor="#FFFFFF" backcolor="#030303" uuid="11ad3fc1-47b8-409f-bc03-5afdf5811416">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Dotted" lineColor="#030303"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="76" splitType="Stretch">
+			<staticText>
+				<reportElement x="165" y="20" width="227" height="30" uuid="3e25e455-2949-4782-887c-82c6a7cbe6b9"/>
+				<textElement textAlignment="Center">
+					<font fontName="SimSun" size="25"/>
+				</textElement>
+				<text><![CDATA[CASH RECEIPT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="164" y="56" width="227" height="1" forecolor="#FFFFFF" backcolor="#030303" uuid="29b12c6d-5c0c-4c83-9f8a-e36fe96361e4">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Dotted" lineColor="#030303"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="314" y="8" width="200" height="30" uuid="59fbf282-d5ea-45f9-b35e-f2149476e8c3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6c1213e6-000c-4a28-8f7a-8bf0bdb2f08f"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Assets's Condition]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="53" y="10" width="198" height="30" uuid="3d939534-677d-4fe2-955b-86c392c4106f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7d4675cb-34cd-4275-a5ef-3be8ddc91c2e"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Asset's Name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="376" y="2" width="100" height="30" uuid="be336a90-723c-4e01-999c-7f858a02a739">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="44134b96-5181-46d6-8a9f-fbef5207fb78"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{asset_condition}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="1" width="100" height="30" uuid="55b3762d-83b5-4387-9fa2-33b5ee018127"/>
+				<textFieldExpression><![CDATA[$F{asset_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="222" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="50" width="130" height="30" uuid="8ff034c0-59f4-4491-8b21-61be00a095a7"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Cash]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="50" width="100" height="30" uuid="1843f2fb-fe2f-4077-91a2-444c93688990"/>
+				<textFieldExpression><![CDATA[$P{Cash}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="83" width="100" height="30" uuid="2b517c71-4099-4a78-b00a-60648430e885"/>
+				<textFieldExpression><![CDATA[$P{Change}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="84" width="130" height="30" uuid="a636d8d4-f3a9-4af8-8eb2-4e68eeba1a33"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Change]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="14" width="130" height="30" uuid="c2d3b202-dc8f-4725-bc88-318e45f38065"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="420" y="14" width="100" height="30" uuid="580366f7-07df-4470-bb61-770a1b30b463"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Total}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="228" y="146" width="100" height="30" uuid="8c17990c-7019-4376-a113-d38a26dc09cf"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="180" width="207" height="30" uuid="fdbd5f3c-f9a2-433a-b3d2-44028ee5d421"/>
+				<textElement textAlignment="Center">
+					<font fontName="Castellar" size="22"/>
+				</textElement>
+				<text><![CDATA[Thank You]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="556" height="1" forecolor="#FFFFFF" backcolor="#030303" uuid="ecdeb02a-24ad-4451-9131-5c11828df447">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Dotted" lineColor="#030303"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="131" width="556" height="1" forecolor="#FFFFFF" backcolor="#030303" uuid="eab976f4-d507-4221-9936-fd04dd90e2ae">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Dotted" lineColor="#030303"/>
+				</graphicElement>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

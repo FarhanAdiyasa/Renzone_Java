@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane stylesheets="@../../styles/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.renzone.controller.pickFromTbController">
+   <center>
+      <AnchorPane prefHeight="531.0" prefWidth="600.0" styleClass="sideBar">
+         <children>
+            <Pane layoutX="58.0" layoutY="77.0" prefHeight="452.0" prefWidth="502.0" styleClass="bgCrem">
+               <children>
+                  <TableView fx:id="tblmember" layoutY="45.0" prefHeight="407.0" prefWidth="501.0">
+                    <columns>
+                      <TableColumn fx:id="idColumn" prefWidth="183.0" text="Member ID" />
+                      <TableColumn fx:id="namaColumn" prefWidth="155.0" text="Member Name" />
+                        <TableColumn fx:id="statusColumn" prefWidth="162.0" text="Status" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="searchBar" layoutX="264.0" layoutY="10.0" prefHeight="33.0" prefWidth="237.0" promptText="search" styleClass="search" />
+                  <Label layoutX="40.0" layoutY="10.0" text="Pick Data">
+                     <font>
+                        <Font name="Century Gothic" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="248.0" layoutY="15.0" text="Member List">
+               <font>
+                  <Font name="Century Gothic" size="31.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

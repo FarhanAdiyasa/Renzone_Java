@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane stylesheets="@../../styles/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.renzone.controller.dsbUtamaController">
+   <center>
+      <AnchorPane prefHeight="900.0" prefWidth="1440.0" styleClass="dashboardUtm">
+         <children>
+            <Button fx:id="btnCrud" layoutX="53.0" layoutY="238.0" mnemonicParsing="false" prefHeight="212.0" prefWidth="235.0" styleClass="btndshU" />
+            <Button fx:id="btnTr" layoutX="61.0" layoutY="564.0" mnemonicParsing="false" prefHeight="212.0" prefWidth="235.0" styleClass="btndshU" />
+            <Pane layoutX="44.0" layoutY="2.0" prefHeight="46.0" prefWidth="1396.0" style="-fx-background-color: rgb(26, 18, 76);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Circle fx:id="fprofil" fill="WHITE" layoutX="1404.0" layoutY="23.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" styleClass="transparent" />
+               </children></Pane>
+            <AnchorPane fx:id="barAP" layoutX="405.0" layoutY="235.0" prefHeight="183.0" prefWidth="1000.0">
+               <children>
+                  <AnchorPane fx:id="ttlMM" layoutX="15.0" layoutY="7.0" prefHeight="177.0" prefWidth="277.0" styleClass="barBiru">
+                     <children>
+                        <Label layoutX="23.0" layoutY="14.0" text="Total Members">
+                           <font>
+                              <Font name="Century Gothic" size="27.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblMember" alignment="CENTER" layoutY="55.0" prefHeight="46.0" prefWidth="241.0" text="0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font name="Felix Titling" size="38.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="361.0" layoutY="1.0" prefHeight="181.0" prefWidth="279.0" styleClass="barMerah">
+                     <children>
+                        <Label layoutX="17.0" layoutY="14.0" text="Active Member">
+                           <font>
+                              <Font name="Century Gothic" size="27.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblActive" alignment="CENTER" layoutX="-57.0" layoutY="57.0" prefHeight="46.0" prefWidth="241.0" text="0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font name="Felix Titling" size="38.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="708.0" layoutY="15.0" prefHeight="180.0" prefWidth="279.0" styleClass="barIjo" AnchorPane.bottomAnchor="-3.0">
+                     <children>
+                        <Label layoutX="45.0" layoutY="14.0" text="Empty Seat">
+                           <font>
+                              <Font name="Century Gothic" size="27.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblEmpty" alignment="CENTER" layoutX="-12.0" layoutY="79.0" prefHeight="46.0" prefWidth="241.0" text="0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font name="Felix Titling" size="38.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <Button layoutX="107.0" layoutY="819.0" mnemonicParsing="false" onAction="#switchLogout" prefHeight="47.0" prefWidth="143.0" style="-fx-border-color: rgb(189, 125, 0); -fx-background-color: transparent; -fx-border-radius: 25%;" text="LOGOUT">
+               <font>
+                  <Font name="SimSun" size="22.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.7565789222717285" green="0.5536862015724182" blue="0.17688535153865814" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill></Button>
+            <Pane layoutX="432.0" layoutY="463.0" prefHeight="148.0" prefWidth="518.0" style="-fx-background-color: rgb(254, 250, 250); -fx-background-radius: 50;">
+               <children>
+                  <Label layoutX="143.0" layoutY="9.0" prefHeight="34.0" prefWidth="233.0" text="Currently Playing">
+                     <font>
+                        <Font name="Century Gothic" size="27.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <TableView fx:id="curPlayTableView" layoutX="432.0" layoutY="512.0" prefHeight="352.0" prefWidth="519.0">
+               <columns>
+                  <TableColumn fx:id="kodeObatCol" text="Table ID" />
+                  <TableColumn fx:id="namaObatCol" prefWidth="132.0" text="Member Name" />
+                  <TableColumn fx:id="kemasanCol" prefWidth="160.0" text="Start Hour" />
+                  <TableColumn fx:id="detCol" prefWidth="173.0" text="End Hour" />
+               </columns>
+            </TableView>
+            <Pane layoutX="985.0" layoutY="463.0" prefHeight="148.0" prefWidth="426.0" style="-fx-background-color: rgb(254, 250, 250); -fx-background-radius: 50;">
+               <children>
+                  <Label layoutX="112.0" layoutY="7.0" prefHeight="34.0" prefWidth="233.0" text="Currently Rented">
+                     <font>
+                        <Font name="Century Gothic" size="27.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <TableView fx:id="curRentTableView" layoutX="984.0" layoutY="512.0" prefHeight="354.0" prefWidth="427.0" style="-fx-background-color: rgb(254, 250, 250);">
+               <columns>
+                  <TableColumn fx:id="IDAK" prefWidth="118.5" text="Accessories Name" />
+                  <TableColumn fx:id="IDM" minWidth="0.0" prefWidth="114.0" text="Member Name" />
+                  <TableColumn fx:id="JENISAK" prefWidth="89.5" text="Type" />
+                  <TableColumn fx:id="NAMAAK" prefWidth="103.0" text="Return" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

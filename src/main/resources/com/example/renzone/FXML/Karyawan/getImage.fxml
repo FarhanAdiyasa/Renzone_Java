@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.SVGPath?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.renzone.controller.GetImageController">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="white" stylesheets="@../../styles/style.css">
+         <children>
+            <Pane layoutX="50.0" layoutY="50.0" styleClass="imgPn">
+               <children>
+                  <ImageView fx:id="ftoKtp" fitHeight="315.0" fitWidth="501.0" onMouseClicked="#pickImg" pickOnBounds="true" preserveRatio="true" />
+                  <SVGPath fx:id="svg" content="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" fill="#727272" layoutX="243.0" layoutY="144.0" scaleX="5.0" scaleY="5.0" />
+               </children>
+            </Pane>
+            <Label layoutX="249.0" layoutY="21.0" text="Drag or Add Image" />
+            <Button fx:id="btnClear" layoutX="522.0" layoutY="26.0" mnemonicParsing="false" onAction="#clear">
+               <graphic>
+                  <SVGPath content="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" fill="RED" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnOk" layoutX="274.0" layoutY="371.0" mnemonicParsing="false" onAction="#ok" text="OK" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

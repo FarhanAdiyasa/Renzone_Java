@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.renzone.controller.uaOwner">
+   <top>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgb(189, 125, 0);" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lbKosong" layoutX="336.0" layoutY="515.0" text="Harap Lengkapi Semua Field!" textFill="#d85656" visible="false">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="390.0" layoutY="448.0" text="Data harus terisi semua!" textFill="RED" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="pnOld" layoutY="68.0" prefHeight="279.0" prefWidth="728.0" style="-fx-background-color: rgb(232, 229, 224);" AnchorPane.leftAnchor="0.0">
+               <children>
+                  <AnchorPane layoutX="100.0" layoutY="78.0" prefHeight="31.0" prefWidth="574.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="60.0">
+                     <children>
+                        <TextField fx:id="txtUsnUpd" layoutX="336.0" layoutY="1.0" prefHeight="30.0" prefWidth="299.0" AnchorPane.leftAnchor="269.0" AnchorPane.rightAnchor="0.0" />
+                        <Label layoutX="45.0" layoutY="-2.0" text="Username">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="98.0" layoutY="129.0" prefHeight="31.0" prefWidth="613.0" AnchorPane.leftAnchor="102.0">
+                     <children>
+                        <Label layoutX="41.0" text="Old Password">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </Label>
+                        <Pane fx:id="vldOldPw" layoutX="593.9987182617188" layoutY="5.998736143112183" visible="false">
+                           <children>
+                              <SVGPath content="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" fill="RED" scaleX="2.0" scaleY="2.0" />
+                           </children>
+                        </Pane>
+                        <PasswordField fx:id="txtOldPw" layoutX="268.0" layoutY="2.0" onKeyTyped="#cekOldPw" prefHeight="29.0" prefWidth="300.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="101.0" layoutY="179.0" prefHeight="31.0" prefWidth="576.0" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="57.0">
+                     <children>
+                        <Label layoutX="43.0" text="New Password">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </Label>
+                        <PasswordField fx:id="txtPwUpd" layoutX="267.0" layoutY="1.0" prefHeight="29.0" prefWidth="303.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="76.0" layoutY="236.0" prefHeight="31.0" prefWidth="632.0" AnchorPane.leftAnchor="76.0" AnchorPane.rightAnchor="-3.0">
+                     <children>
+                        <Label layoutX="70.0" text="Type Again">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </Label>
+                        <PasswordField fx:id="txtTAUpd" layoutX="289.0" onKeyTyped="#cekPwUpd" prefHeight="29.0" prefWidth="306.0" />
+                        <Pane fx:id="vldPwUpd" layoutX="618.0" layoutY="6.0" visible="false">
+                           <children>
+                              <SVGPath content="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" fill="RED" layoutX="-1.0" scaleX="2.0" scaleY="2.0" smooth="false" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <Label fx:id="lblVldsUpd" layoutX="511.0" layoutY="309.0" text="One or More Field Cannot Empty!" textFill="#ff1212" visible="false" />
+                  <Label alignment="CENTER" layoutX="146.0" layoutY="12.0" text="Update Your Account, Boss!">
+                     <font>
+                        <Font name="SimSun" size="34.0" />
+                     </font>
+                  </Label>
+                  <Pane fx:id="vldLength" layoutX="76.0" layoutY="275.0" prefHeight="15.0" prefWidth="340.0" visible="false">
+                     <children>
+                        <Label fx:id="lblVldsUpd11" text="Minimal Charachter of Username And Password is 5 Character" textFill="#ff1212" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="vldUsnUpd" layoutX="367.0" layoutY="109.0" prefHeight="15.0" prefWidth="142.0" visible="false">
+                     <children>
+                        <Label fx:id="lblVldsUpd1" text="Username Already Taken" textFill="#ff1212" />
+                     </children>
+                  </Pane>
+                  <SVGPath content="M5 2a.5.5 0 0 1 .5-.5c.862 0 1.573.287 2.06.566.174.099.321.198.44.286.119-.088.266-.187.44-.286A4.165 4.165 0 0 1 10.5 1.5a.5.5 0 0 1 0 1c-.638 0-1.177.213-1.564.434a3.49 3.49 0 0 0-.436.294V7.5H9a.5.5 0 0 1 0 1h-.5v4.272c.1.08.248.187.436.294.387.221.926.434 1.564.434a.5.5 0 0 1 0 1 4.165 4.165 0 0 1-2.06-.566A4.561 4.561 0 0 1 8 13.65a4.561 4.561 0 0 1-.44.285 4.165 4.165 0 0 1-2.06.566.5.5 0 0 1 0-1c.638 0 1.177-.213 1.564-.434.188-.107.335-.214.436-.294V8.5H7a.5.5 0 0 1 0-1h.5V3.228a3.49 3.49 0 0 0-.436-.294A3.166 3.166 0 0 0 5.5 2.5.5.5 0 0 1 5 2z&#10;M10 5h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4v1h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4v1zM6 5V4H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v-1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4z&#10;&#10;" layoutX="89.0" layoutY="82.0" scaleX="2.0" scaleY="2.0" />
+                  <SVGPath content="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z&#10;M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z&#10;&#10;" layoutX="93.0" layoutY="134.0" scaleX="2.0" scaleY="2.0" />
+                  <SVGPath content="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z&#10;M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z&#10;&#10;" layoutX="96.0" layoutY="186.0" scaleX="2.0" scaleY="2.0" />
+                  <SVGPath content="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z&#10;M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z&#10;&#10;" layoutX="98.0" layoutY="241.0" scaleX="2.0" scaleY="2.0" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="btnCancel" layoutX="220.0" layoutY="427.0" mnemonicParsing="false" onAction="#btnCancelClick" prefHeight="38.0" prefWidth="83.0" text="Cancel">
+               <font>
+                  <Font name="Century Gothic Bold" size="14.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="barBiru" />
+                  <String fx:value="barBiruHover" />
+               </styleClass>
+            </Button>
+            <Button fx:id="btnSave" layoutX="415.0" layoutY="427.0" mnemonicParsing="false" onAction="#btnSaveClick" prefHeight="38.0" prefWidth="102.0" text="Ok">
+               <font>
+                  <Font name="Century Gothic Bold" size="14.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="barBiru" />
+                  <String fx:value="barBiruHover" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

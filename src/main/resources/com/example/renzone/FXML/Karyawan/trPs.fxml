@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.gleidsonmt.gncontrols.GNButtonBase?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane stylesheets="@../../styles/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.renzone.controller.trRentalController">
+   <center>
+      <AnchorPane prefHeight="900.0" prefWidth="1440.0" styleClass="bgTr">
+         <children>
+            <Button fx:id="backBtn" layoutX="669.0" layoutY="811.0" mnemonicParsing="false" onAction="#toUtama" prefHeight="62.0" prefWidth="135.0" style="-fx-background-color: transparent; -fx-border-color: rgb(192, 239, 244); -fx-border-radius: 25%; -fx-border-width: 4px;" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="SimSun" size="23.0" />
+               </font>
+            </Button>
+            <AnchorPane layoutX="130.0" layoutY="66.0">
+               <children>
+                  <Pane layoutX="17.0" layoutY="12.0" prefHeight="169.0" prefWidth="395.0" styleClass="btnDshCclr">
+                     <children>
+                        <Label layoutX="47.0" layoutY="2.0" text="Choose Your Ps" textFill="WHITE">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnMember" layoutX="17.0" layoutY="53.0" prefHeight="696.0" prefWidth="518.0" styleClass="pnTr">
+                     <children>
+                        <AnchorPane layoutX="58.0" layoutY="105.0">
+                           <children>
+                              <Button fx:id="btnMem" mnemonicParsing="false" onAction="#onBtnMemberClick" prefHeight="115.0" prefWidth="168.0" styleClass="blueBtn">
+                                 <graphic>
+                                    <SVGPath content="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="WHITE" scaleX="7.0" scaleY="7.0" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnNon" layoutX="239.0" mnemonicParsing="false" onAction="#onBtnNonClick" prefHeight="115.0" prefWidth="168.0" styleClass="blueBtn">
+                                 <graphic>
+                                    <SVGPath content="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z" fill="WHITE" scaleX="7.0" scaleY="7.0" />
+                                 </graphic>
+                              </Button>
+                              <Label layoutX="28.0" layoutY="115.0" text="Member">
+                                 <font>
+                                    <Font name="Century Gothic" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="236.0" layoutY="115.0" text="Non-Member">
+                                 <font>
+                                    <Font name="Century Gothic" size="27.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apMem" layoutX="78.0" layoutY="306.0" prefHeight="270.0" prefWidth="358.0" styleClass="white" visible="false">
+                           <children>
+                              <TableView fx:id="tbMem" prefHeight="237.0" prefWidth="351.0" styleClass="bgCrem" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="idCol" prefWidth="168.0" text="ID Member" />
+                                  <TableColumn fx:id="nmCol" prefWidth="182.0" text="Nama Member" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="searchBar" layoutX="151.0" layoutY="18.0" prefHeight="33.0" prefWidth="187.0" promptText="Search" styleClass="search" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <Label layoutX="14.0" layoutY="5.0" text="Choose Member">
+                                 <font>
+                                    <Font name="Century Gothic" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="entrName" layoutX="33.0" layoutY="389.0" visible="false">
+                           <children>
+                              <Label text="Enter Name  :">
+                                 <font>
+                                    <Font name="Century Gothic" size="30.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="inputNama" layoutX="224.0" layoutY="3.0" prefHeight="32.0" prefWidth="223.0" styleClass="textfield" />
+                           </children>
+                        </AnchorPane>
+                        <Label fx:id="lbWarn" layoutX="254.0" layoutY="655.0" text="CHOOSE ONE!" textFill="#ff0b0b" visible="false">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnTgl" layoutX="17.0" layoutY="53.0" prefHeight="696.0" prefWidth="518.0" styleClass="pnTr" visible="false">
+                     <children>
+                        <AnchorPane fx:id="apImgPs" layoutX="20.0" layoutY="16.0" prefHeight="668.0" prefWidth="472.0" styleClass="pnTr">
+                           <children>
+                              <GNButtonBase fx:id="Playstation2" layoutX="15.0" layoutY="99.0" prefHeight="195.0" prefWidth="222.0" styleClass="blueBtn" text=" " AnchorPane.bottomAnchor="360.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="121.0">
+                                 <graphic>
+                                    <ImageView fitHeight="128.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../img/PS2-removebg-preview.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </GNButtonBase>
+                              <GNButtonBase fx:id="Playstation3" layoutX="269.0" layoutY="99.0" prefHeight="187.0" prefWidth="197.0" styleClass="blueBtn" text=" " AnchorPane.bottomAnchor="360.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="121.0">
+                                 <graphic>
+                                    <ImageView fitHeight="136.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../img/ps3-removebg-preview.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </GNButtonBase>
+                              <GNButtonBase fx:id="Playstation4" layoutX="15.0" layoutY="366.0" prefHeight="181.0" prefWidth="197.0" styleClass="blueBtn" text=" " AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="360.0">
+                                 <graphic>
+                                    <ImageView fitHeight="117.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../img/ps4-removebg-preview.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </GNButtonBase>
+                              <GNButtonBase fx:id="Playstation5" layoutX="269.0" layoutY="366.0" prefHeight="187.0" prefWidth="198.0" styleClass="blueBtn" text=" " AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="360.0">
+                                 <graphic>
+                                    <ImageView fitHeight="120.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../img/ps5-removebg-preview.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </GNButtonBase>
+                              <Label fx:id="lblPs" layoutX="328.0" layoutY="565.0" text="CHOOSE ONE!" textFill="#fc4e4e" visible="false">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnPs" layoutX="17.0" layoutY="53.0" prefHeight="696.0" prefWidth="518.0" styleClass="pnTr" visible="false">
+                     <children>
+                        <AnchorPane fx:id="rbContainer" layoutX="56.0" layoutY="199.0" prefHeight="392.0" prefWidth="416.0" styleClass="dsbdKar" />
+                        <AnchorPane layoutX="44.0" layoutY="59.0" prefHeight="139.0" prefWidth="436.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/icon/table_furniture_icon_135133.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="167.0" layoutY="41.0" text="MEJA">
+                                 <font>
+                                    <Font name="Century Gothic" size="38.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="114.0" fitWidth="168.0" layoutX="286.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/icon/playHome.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <Label fx:id="lblMeja" layoutX="346.0" layoutY="614.0" text="CHOOSE TABLE!" textFill="#fc4e4e" visible="false">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
+                  <Pane fx:id="pnByr" layoutX="17.0" layoutY="53.0" prefHeight="696.0" prefWidth="518.0" styleClass="pnTr" visible="false">
+                     <children>
+                        <AnchorPane layoutX="9.0" layoutY="44.0" prefHeight="87.0" prefWidth="501.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="204.0" layoutY="28.0" text="LAYANAN">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="14.0" layoutY="175.0" prefHeight="483.0" prefWidth="492.0">
+                           <children>
+                              <AnchorPane fx:id="apMem1" prefHeight="270.0" prefWidth="358.0" styleClass="white" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <TableView fx:id="tbLay" prefHeight="449.0" prefWidth="492.0" styleClass="bgCrem" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <columns>
+                                          <TableColumn fx:id="pktCol" prefWidth="187.0" text="Nama Layanan" />
+                                          <TableColumn fx:id="hrgCol" prefWidth="130.5" text="Harga" />
+                                          <TableColumn fx:id="jmlCol" prefWidth="173.5" text="Jumlah" />
+                                       </columns>
+                                    </TableView>
+                                    <TextField fx:id="searchBarLay" layoutX="151.0" layoutY="18.0" prefHeight="33.0" prefWidth="187.0" promptText="Search" styleClass="search" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <Label layoutX="14.0" layoutY="5.0" prefHeight="23.0" prefWidth="162.0" text="Choose Layanan">
+                                       <font>
+                                          <Font name="Century Gothic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children></Pane>
+                  <Pane fx:id="pnTr" layoutX="17.0" layoutY="53.0" prefHeight="696.0" prefWidth="518.0" styleClass="pnTr" visible="false">
+                     <children>
+                        <AnchorPane layoutX="27.0" layoutY="92.0" prefHeight="131.0" prefWidth="465.0" styleClass="white">
+                           <children>
+                              <Label layoutX="131.0" layoutY="47.0" text="PEMBAYARAN">
+                                 <font>
+                                    <Font name="Century Gothic" size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="12.0" layoutY="337.0" prefHeight="31.0" prefWidth="495.0">
+                           <children>
+                              <TextField fx:id="txtByr" prefHeight="45.0" prefWidth="300.0" styleClass="textfield" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="0.0" />
+                              <Label layoutX="30.0" layoutY="7.0" text="Jumlah Bayar" AnchorPane.bottomAnchor="7.0" AnchorPane.topAnchor="7.0">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </Label>
+                              <SVGPath content="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" layoutX="-11.0" layoutY="-23.0" scaleX="2.0" scaleY="2.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="14.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="12.0" layoutY="422.0" prefHeight="31.0" prefWidth="495.0">
+                           <children>
+                              <TextField fx:id="txtKmbl" editable="false" prefHeight="45.0" prefWidth="300.0" styleClass="textfield" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="0.0" />
+                              <Label layoutX="46.0" layoutY="7.0" text="Kembali" AnchorPane.bottomAnchor="7.0" AnchorPane.topAnchor="7.0">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </Label>
+                              <SVGPath content="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" layoutX="-11.0" layoutY="-23.0" scaleX="2.0" scaleY="2.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="14.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="18.0" layoutY="580.0" prefHeight="86.0" prefWidth="483.0">
+                           <children>
+                              <GNButtonBase fx:id="btnSimpan" layoutX="157.0" layoutY="13.0" onAction="#simpanOnClick" prefHeight="60.0" prefWidth="150.0" styleClass="blueBtn" text="   Simpan">
+                                 <graphic>
+                                    <SVGPath content="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" fill="WHITE" scaleX="3.0" scaleY="3.0" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </GNButtonBase>
+                           </children>
+                        </AnchorPane>
+                     </children></Pane>
+               </children>
+            </AnchorPane>
+            <Pane layoutX="808.0" layoutY="78.0" prefHeight="169.0" prefWidth="395.0" styleClass="btnDshCclr">
+               <children>
+                  <Label layoutX="24.0" layoutY="3.0" text="Rent Transaction" textFill="WHITE">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="808.0" layoutY="119.0" prefHeight="696.0" prefWidth="518.0" styleClass="pnTr">
+               <children>
+                  <AnchorPane layoutX="12.0" layoutY="72.0" prefHeight="31.0" prefWidth="495.0">
+                     <children>
+                        <TextField fx:id="txtIdMem" editable="false" prefHeight="45.0" prefWidth="300.0" styleClass="textfield" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="0.0" />
+                        <Label layoutX="54.0" layoutY="7.0" text="Member ID" AnchorPane.bottomAnchor="7.0" AnchorPane.topAnchor="7.0">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="12.0" layoutY="234.0" prefHeight="31.0" prefWidth="495.0">
+                     <children>
+                        <TextField fx:id="txtLay" editable="false" prefHeight="95.0" prefWidth="300.0" styleClass="textfield" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="0.0" />
+                        <Label layoutX="54.0" layoutY="7.0" text="Service" AnchorPane.bottomAnchor="7.0" AnchorPane.topAnchor="7.0">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="12.0" layoutY="360.0" prefHeight="31.0" prefWidth="495.0">
+                     <children>
+                        <TextField fx:id="txtMeja" editable="false" prefHeight="45.0" prefWidth="300.0" styleClass="textfield" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="0.0" />
+                        <Label layoutX="54.0" layoutY="7.0" text="Table" AnchorPane.bottomAnchor="7.0" AnchorPane.topAnchor="7.0">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="12.0" layoutY="154.0" prefHeight="31.0" prefWidth="495.0">
+                     <children>
+                        <TextField fx:id="txtNm" editable="false" prefHeight="45.0" prefWidth="300.0" styleClass="textfield" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="0.0" />
+                        <Label layoutX="54.0" layoutY="7.0" text="Name" AnchorPane.bottomAnchor="7.0" AnchorPane.topAnchor="7.0">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="12.0" layoutY="439.0" prefHeight="31.0" prefWidth="495.0">
+                     <children>
+                        <TextField fx:id="txtTgl" editable="false" prefHeight="45.0" prefWidth="300.0" styleClass="textfield" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="0.0" />
+                        <Label layoutX="54.0" layoutY="7.0" text="Date" AnchorPane.bottomAnchor="7.0" AnchorPane.topAnchor="7.0">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Label fx:id="idTr" layoutX="39.0" layoutY="23.0" prefHeight="36.0" prefWidth="227.0" text="idTr">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="idKar" layoutX="360.0" layoutY="23.0" prefHeight="36.0" prefWidth="127.0" text="idKar">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="12.0" layoutY="522.0" prefHeight="31.0" prefWidth="495.0">
+                     <children>
+                        <TextField fx:id="txtSls" editable="false" prefHeight="45.0" prefWidth="300.0" styleClass="textfield" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="0.0" />
+                        <Label layoutX="52.0" layoutY="7.0" text="End" AnchorPane.bottomAnchor="7.0" AnchorPane.topAnchor="7.0">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="12.0" layoutY="599.0" prefHeight="31.0" prefWidth="495.0">
+                     <children>
+                        <TextField fx:id="txtHarga" editable="false" prefHeight="45.0" prefWidth="300.0" styleClass="textfield" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="0.0" />
+                        <Label layoutX="50.0" layoutY="7.0" text="Total Price" AnchorPane.bottomAnchor="7.0" AnchorPane.topAnchor="7.0">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Button layoutX="452.0" layoutY="818.0" mnemonicParsing="false" onAction="#onClickNext" prefHeight="48.0" prefWidth="134.0" styleClass="barBiru" text="Next" />
+            <Button layoutX="207.0" layoutY="818.0" mnemonicParsing="false" onAction="#onClickPrev" prefHeight="48.0" prefWidth="134.0" styleClass="barBiru" text="Prev" />
+            <Pane layoutX="1193.0" layoutY="2.0" prefHeight="34.0" prefWidth="180.0" style="-fx-background-color: rgb(28, 31, 85);" />
+            <Circle fx:id="fprofil" fill="WHITE" layoutX="1404.0" layoutY="21.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" styleClass="transparent" />
+            <SVGPath content="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z&#10;M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z&#10;&#10;" layoutX="833.0005997163244" layoutY="203.00155782699585" scaleX="2.0" scaleY="2.0" />
+            <SVGPath content="M5 2a.5.5 0 0 1 .5-.5c.862 0 1.573.287 2.06.566.174.099.321.198.44.286.119-.088.266-.187.44-.286A4.165 4.165 0 0 1 10.5 1.5a.5.5 0 0 1 0 1c-.638 0-1.177.213-1.564.434a3.49 3.49 0 0 0-.436.294V7.5H9a.5.5 0 0 1 0 1h-.5v4.272c.1.08.248.187.436.294.387.221.926.434 1.564.434a.5.5 0 0 1 0 1 4.165 4.165 0 0 1-2.06-.566A4.561 4.561 0 0 1 8 13.65a4.561 4.561 0 0 1-.44.285 4.165 4.165 0 0 1-2.06.566.5.5 0 0 1 0-1c.638 0 1.177-.213 1.564-.434.188-.107.335-.214.436-.294V8.5H7a.5.5 0 0 1 0-1h.5V3.228a3.49 3.49 0 0 0-.436-.294A3.166 3.166 0 0 0 5.5 2.5.5.5 0 0 1 5 2z&#10;M10 5h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4v1h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4v1zM6 5V4H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v-1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4z&#10;" layoutX="835.0" layoutY="287.0" scaleX="2.0" scaleY="2.0" />
+            <SVGPath content="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" layoutX="834.0" layoutY="568.0" scaleX="2.0" scaleY="2.0" />
+            <SVGPath content="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5h3Z&#10;M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-12Z&#10;M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3Z&#10;" layoutX="834.0" layoutY="490.0" scaleX="2.0" scaleY="2.0" />
+            <SVGPath content="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5h3Z&#10;M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-12Z&#10;M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3Z&#10;" layoutX="835.0" layoutY="391.0" scaleX="2.0" scaleY="2.0" />
+            <SVGPath content="M0 5a5.002 5.002 0 0 0 4.027 4.905 6.46 6.46 0 0 1 .544-2.073C3.695 7.536 3.132 6.864 3 5.91h-.5v-.426h.466V5.05c0-.046 0-.093.004-.135H2.5v-.427h.511C3.236 3.24 4.213 2.5 5.681 2.5c.316 0 .59.031.819.085v.733a3.46 3.46 0 0 0-.815-.082c-.919 0-1.538.466-1.734 1.252h1.917v.427h-1.98c-.003.046-.003.097-.003.147v.422h1.983v.427H3.93c.118.602.468 1.03 1.005 1.229a6.5 6.5 0 0 1 4.97-3.113A5.002 5.002 0 0 0 0 5zm16 5.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0zm-7.75 1.322c.069.835.746 1.485 1.964 1.562V14h.54v-.62c1.259-.086 1.996-.74 1.996-1.69 0-.865-.563-1.31-1.57-1.54l-.426-.1V8.374c.54.06.884.347.966.745h.948c-.07-.804-.779-1.433-1.914-1.502V7h-.54v.629c-1.076.103-1.808.732-1.808 1.622 0 .787.544 1.288 1.45 1.493l.358.085v1.78c-.554-.08-.92-.376-1.003-.787H8.25zm1.96-1.895c-.532-.12-.82-.364-.82-.732 0-.41.311-.719.824-.809v1.54h-.005zm.622 1.044c.645.145.943.38.943.796 0 .474-.37.8-1.02.86v-1.674l.077.018z" layoutX="835.0" layoutY="651.0" scaleX="2.0" scaleY="2.0" />
+            <SVGPath content="M5.5 9.5A.5.5 0 0 1 6 9h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z&#10;M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z&#10;&#10;" layoutX="834.0" layoutY="733.0" scaleX="2.0" scaleY="2.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
