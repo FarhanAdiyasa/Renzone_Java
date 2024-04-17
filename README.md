@@ -7,8 +7,6 @@ Renzone is a desktop application developed using JavaFX and SQL Server, designed
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
