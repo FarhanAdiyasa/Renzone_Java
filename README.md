@@ -1,4 +1,7 @@
 # Renzone - Desktop Application for PlayStation Rent
+![image](https://github.com/user-attachments/assets/667efe42-3f65-4362-823b-1f6a122c1c91)
+![image](https://github.com/user-attachments/assets/1a89a007-d74d-42c3-9786-251d80526c48)
+![image](https://github.com/user-attachments/assets/0abdeeca-274d-436e-9ea7-606c6df6f85e)
 
 Renzone is a desktop application developed using JavaFX and SQL Server, designed specifically for managing PlayStation rentals. This README provides an overview of the project, installation instructions, usage guidelines, and other important information.
 
@@ -48,3 +51,5 @@ The Renzone application aims to provide an integrated and effective solution for
 - **JavaFX:** Used for building the user interface (UI) and frontend functionalities.
 - **SQL Server:** Used for database management and storing business data.
 - **Maven:** Dependency management and build tool.
+![Uploading image.png…]()
+
